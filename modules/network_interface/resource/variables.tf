@@ -14,10 +14,10 @@ variable "resource_group_name" {
 }
 
 variable "ip_configuration" {
-  type = map(object({
+  type = object({
     name                          = string
     subnet_id                     = string
     private_ip_address_allocation = string
-  }))
+  })
   description = "Ip  configuration for the network interface."
 }
