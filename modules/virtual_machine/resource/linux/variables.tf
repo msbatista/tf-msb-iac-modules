@@ -29,12 +29,10 @@ variable "admin_username" {
   description = "Admin user for this VM."
 }
 
-variable "admin_ssh_key" {
-  type = object({
-    username   = string
-    public_key = string
-  })
-  description = "A block which defines an public key that should be used for authentication."
+variable "admin_password" {
+  type        = string
+  sensitive   = true
+  description = "Defines a password for the admin user."
 }
 
 variable "source_image_reference" {
@@ -45,6 +43,11 @@ variable "source_image_reference" {
     version   = string
   })
   description = "Specifies which image and version will used."
+}
+
+variable "computer_name" {
+  type        = string
+  description = "Defines the hostname for this virtual machine."
 }
 
 variable "os_disk" {
