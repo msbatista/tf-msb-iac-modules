@@ -61,3 +61,8 @@ variable "os_disk" {
   }
   description = "A block that defines the type of th cache and the type of the storage account."
 }
+
+variable "storage_account_uri" {
+  type        = string
+  description = "Storage account for loggin boot diagnostics."
+}

@@ -14,6 +14,10 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
 
   source_image_reference = var.source_image_reference
 
+  boot_diagnostics {
+    storage_account_uri = var.storage_account_uri
+  }
+
   identity {
     type = "SystemAssigned"
   }
