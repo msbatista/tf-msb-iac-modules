@@ -10,9 +10,17 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
 
   disable_password_authentication = false
 
-  os_disk = var.os_disk
+  os_disk {
+    caching              = var.os_disk.value["caching"]
+    storage_account_type = var.os_disk.value["storage_account_type"]
+  }
 
-  source_image_reference = var.source_image_reference
+  source_image_reference {
+    publisher = var.source_image_reference.value["publisher"]
+    offer     = var.source_image_reference.value["offer"]
+    sku       = var.source_image_reference.value["sku"]
+    version   = var.source_image_reference.value["version"]
+  }
 
   boot_diagnostics {
     storage_account_uri = var.storage_account_uri
