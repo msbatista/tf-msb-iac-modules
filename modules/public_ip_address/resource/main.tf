@@ -7,7 +7,7 @@ resource "azurerm_public_ip" "public_ip" {
   sku      = var.sku
   sku_tier = var.sku_tier
 
-  availability_zone = var.allocation_method
+  availability_zone = var.availability_zone
 
   tags = var.tags
 }
