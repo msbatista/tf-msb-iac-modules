@@ -11,6 +11,7 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
   disable_password_authentication = false
 
   os_disk {
+    name                 = var.os_disk.name
     caching              = var.os_disk.caching
     storage_account_type = var.os_disk.storage_account_type
   }
