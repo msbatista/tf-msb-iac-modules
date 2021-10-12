@@ -11,9 +11,6 @@ output "primary_access_key" {
   sensitive = true
 }
 
-output "identity" {
-  value = data.azurerm_storage_account.storage_account.identity
-}
 
 output "primary_web_host" {
   value = data.azurerm_storage_account.storage_account.primary_web_host
