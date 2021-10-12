@@ -18,6 +18,7 @@ variable "ip_configurations" {
     name                          = string
     subnet_id                     = string
     private_ip_address_allocation = string
+    public_ip_address_id          = string
   }))
   description = "Ip  configuration for the network interface."
 }
