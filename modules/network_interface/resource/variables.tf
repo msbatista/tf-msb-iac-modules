@@ -13,11 +13,11 @@ variable "resource_group_name" {
   description = "The resource group where the resource group that network interface will be located."
 }
 
-variable "ip_configuration" {
-  type = object({
+variable "ip_configurations" {
+  type = list(object({
     name                          = string
     subnet_id                     = string
     private_ip_address_allocation = string
-  })
+  }))
   description = "Ip  configuration for the network interface."
 }
