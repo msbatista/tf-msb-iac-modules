@@ -13,7 +13,7 @@ variable "network_security_group_name" {
   description = "The network security group name which this rule will be associated with."
 }
 
-variable "network_security_group_rule_parameters" {
+variable "rule" {
   type = object({
     priority                   = string
     direction                  = string
