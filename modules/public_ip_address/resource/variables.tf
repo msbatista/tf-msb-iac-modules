@@ -36,6 +36,12 @@ variable "availability_zone" {
   description = "The availability zone to allocate the Public IP in. Possible values are Zone-Redundant, 1, 2, 3, and No-Zone. Defaults to Zone-Redundant."
 }
 
+variable "domain_name_label" {
+  type        = string
+  default     = null
+  description = "Label for the Domain Name. Will be used to make up the FQDN. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
+}
+
 variable "tags" {
   type        = map(any)
   default     = {}
