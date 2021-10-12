@@ -63,3 +63,9 @@ variable "storage_account_uri" {
   type        = string
   description = "Storage account for loggin boot diagnostics."
 }
+
+variable "tags" {
+  type        = map(any)
+  default     = {}
+  description = "A mapping of tags which should be assigned to this resource."
+}

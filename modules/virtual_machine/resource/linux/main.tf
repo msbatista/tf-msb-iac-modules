@@ -30,4 +30,6 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
   identity {
     type = "SystemAssigned"
   }
+
+  tags = var.tags
 }
