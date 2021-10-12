@@ -56,10 +56,6 @@ variable "os_disk" {
     caching              = string
     storage_account_type = string
   })
-  default = {
-    caching              = "ReadWrite"
-    storage_account_type = "StandardSSD_LRS"
-  }
   description = "A block that defines the type of th cache and the type of the storage account."
 }
 
