@@ -52,6 +52,7 @@ variable "computer_name" {
 
 variable "os_disk" {
   type = object({
+    name                 = string
     caching              = string
     storage_account_type = string
   })
