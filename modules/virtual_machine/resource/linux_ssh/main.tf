@@ -9,6 +9,10 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
 
   disable_password_authentication = true
 
+  certificate = {
+    url = var.certificate_url
+  }
+
   os_disk {
     name                 = var.os_disk.name
     caching              = var.os_disk.caching
@@ -23,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
   }
 
   admin_ssh_key {
-    username = var.admin_username
+    username   = var.admin_username
     public_key = var.public_key
   }
 

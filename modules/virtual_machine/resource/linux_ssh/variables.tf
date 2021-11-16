@@ -68,3 +68,9 @@ variable "tags" {
   default     = {}
   description = "A mapping of tags which should be assigned to this resource."
 }
+
+variable "certificate_url" {
+  type = string
+  default = null
+  description = "The secret url for the key vaul cerficate."
+}
