@@ -9,9 +9,17 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
 
   disable_password_authentication = true
 
-  certificate {
-    url = var.certificate_url
+  secret {
+    dynamic "url_certifcates" {
+      for_each = var.url_certifcates
+      content {
+        url = url_certifcates.value["url"]
+      }
+    }
+
+    key_vault_id = var.key_vault_id
   }
+
 
   os_disk {
     name                 = var.os_disk.name

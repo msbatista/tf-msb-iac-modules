@@ -70,7 +70,15 @@ variable "tags" {
 }
 
 variable "certificate_url" {
-  type = string
-  default = null
-  description = "The secret url for the key vaul cerficate."
+  type = list(map({
+    url = string
+  }))
+  default     = null
+  description = "An list of urls to key vault certificates."
+}
+
+variable "key_vault_id" {
+  type        = string
+  default     = null
+  description = "Key vault id where the are in."
 }
