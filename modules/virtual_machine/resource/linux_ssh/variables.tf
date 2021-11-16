@@ -69,8 +69,8 @@ variable "tags" {
   description = "A mapping of tags which should be assigned to this resource."
 }
 
-variable "certificate_url" {
-  type = list(map({
+variable "url_certifcates" {
+  type = list(object({
     url = string
   }))
   default     = null
