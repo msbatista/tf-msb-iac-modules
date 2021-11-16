@@ -10,7 +10,7 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
   disable_password_authentication = true
 
   secret {
-    dynamic "url_certifcates" {
+    dynamic "certificate" {
       for_each = var.url_certifcates
       content {
         url = url_certifcates.value["url"]
