@@ -9,7 +9,7 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
 
   disable_password_authentication = true
 
-  certificate = {
+  certificate {
     url = var.certificate_url
   }
 
